@@ -1,3 +1,26 @@
+<?php
+//   funcion para iniciar login o actualizar buffer
+ ob_start();
+?>
+
+<?php
+// // utilizar el archivo conexion.php
+// include_once 'admin/conexion.php';
+
+// // sincronizar la base de datos con una funcion
+
+// $conn = mysqli_connect($host,$user,$pw,$db);
+
+// // control para confirmar el cliente
+// if(isset($_SESSION['idcliente'])==false){
+//     header(location:'index.php');
+// }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,45 +68,43 @@
         </div>
       </nav>
 
-      <!-- slider -->
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="admin/images/l1.jpg" class="d-block w-100 alto" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="admin/images/l2.jpg" class="d-block w-100 alto" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="admin/images/l3.jpg" class="d-block w-100 alto" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      <!-- info -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="libros">
+      <h2 class="titulo">Libros</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
       </div>
+      
+
 
       <!-- la carta -->
       <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="carta">
@@ -195,3 +216,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+ob_end_flush();
+?>
