@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-02-2023 a las 21:54:41
+-- Tiempo de generación: 04-03-2023 a las 21:53:27
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.15
 
@@ -36,6 +36,13 @@ CREATE TABLE `clientes` (
   `email` varchar(60) NOT NULL,
   `celular` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`idcliente`, `identificacion`, `tipoidentificacion`, `nombre`, `apellido`, `email`, `celular`) VALUES
+(1, '54555', 'cc', 'pepe', 'lop', 'asda@po.com', 31505455);
 
 -- --------------------------------------------------------
 
@@ -109,7 +116,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `libros`
