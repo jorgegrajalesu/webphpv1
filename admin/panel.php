@@ -231,7 +231,26 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
+  <?php
+  //libros
+   if($modulo =="libros"){
+    include_once "consultalibros.php";
+   }
   
+  //clientes
+  if($modulo == "clientes"){
+    include_once "consultaclientes.php";
+
+  }
+  
+  //usuarios
+  if($modulo == "usuarios"){
+    include_once "consultausuarios.php";
+  }
+  
+
+
+  ?>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2023 <a href="#">Jorge Grajales</a>.</strong>
