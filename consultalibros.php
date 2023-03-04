@@ -82,23 +82,30 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+              <?php
+                include_once "admin/conexion.php";
+                // crear la conexion a la bd
+                $conn = mysqli_connect($host,$user,$pw,$db);
+                //crear una consulta a la base de datos
+                $sql = "SELECT * FROM libros;";
+                //preparar el array de resultados
+                $result =mysqli_query($conn,$sql);
+                //estructura de loop para imprimir n datos while
+                while ($row = mysqli_fetch_assoc($result)){
+
+                ?>
+                <tr>              
+                <td><?php echo $row['nombre']?></td>
+                <td><?php echo $row['isbn']?></td>
+                <td><?php echo $row['precio']?></td>             
+               
+                <td><?php echo "<img src='admin/".$row['imagen']."' width='50' height='50'>";""?></td>
+                <td><?php echo $row['descripcion']?></td>
+                    
                 </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                <?php
+                }
+                ?>
             </tbody>
         </table>
 
