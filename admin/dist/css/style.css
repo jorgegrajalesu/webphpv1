@@ -49,6 +49,13 @@ body{
     
 }
 
+#login .tituloSer {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+
+}
+
 /* contacto */
 section{
     width: 100%;
