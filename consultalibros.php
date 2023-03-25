@@ -70,19 +70,10 @@
 
       <!-- info -->
       <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="libros">
-      <h2 class="titulo">Libros</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">ISBN</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Descripción</th>
-                </tr>
-            </thead>
-            <tbody>
-              <?php
+      
+        <h2 class="titulo">Libros</h2>
+        <div class="col">
+        <?php
                 include_once "admin/conexion.php";
                 // crear la conexion a la bd
                 $conn = mysqli_connect($host,$user,$pw,$db);
@@ -94,88 +85,23 @@
                 while ($row = mysqli_fetch_assoc($result)){
 
                 ?>
-                <tr>              
-                <td><?php echo $row['nombre']?></td>
-                <td><?php echo $row['isbn']?></td>
-                <td><?php echo $row['precio']?></td>             
-               
-                <td><?php echo "<img src='admin/".$row['imagen']."' width='50' height='50'>";""?></td>
-                <td><?php echo $row['descripcion']?></td>
-                    
-                </tr>
-                <?php
-                }
-                ?>
-            </tbody>
-        </table>
-
+          <div class="card">
+          <?php echo "<img src='admin/".$row['imagen']."' width='100%' height='380'>";""?>
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $row['nombre']?></h5>
+              <p class="card-text">ISBN-<?php echo $row['isbn']?><p>
+               <?php echo $row['descripcion']?>
+              </p><span> $<?php echo $row['precio']?></span></p>
+              <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
+            </div>            
+          </div>          
+        </div>
+        <?php
+          }
+        ?>
       </div>
       
-
-
-      <!-- la carta -->
-      <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="carta">
-        <h2 class="titulo">Novedades</h2>
-        <div class="col">
-          <div class="card">
-            <img src="https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/365/m_libros/portada_marcus-pocus-3-titulo-provisional_pedro-manas_202211021757.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Marcus Pocus 3. La maldición de los elfos</h5>
-              <p class="card-text">EMarcus Pocus 3. La maldición de los elfos</p>
-              <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
-            </div>
-          </div>
-        </div>
-
-          <div class="col">
-            <div class="card">
-              <img src="https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/361/m_libros/portada_villa-melania_desiree-ruiz_202212071413.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Villa Melania</h5>
-                <p class="card-text">Villa Melania es una absorbente saga familiar que evoca otra era de forma realmente bella. Algunas puertas están cerradas por alguna poderosa razón.</p>
-                <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card">
-              <img src="https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/366/m_libros/portada_el-cerebro-depre_anders-hansen_202301231518.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">El cerebro depre</h5>
-                <p class="card-text">un libro divulgativo para entender los mecanismos biológicos subyacentes a la depresión y la ansiedad y cómo combatirlos.</p>
-                <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
-              </div>
-            </div>
-          </div>          
-      </div>
-
-      <!-- servicios -->
-      <div class="row row-cols-1 row-cols-md-2 g-4 p-5" id="servicios">
-        <h2 class="tituloSer">Servicios</h2>
-        <div class="col">
-          <div class="card">
-            <img src="images/recetas.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Recetas</h5>
-              <p class="card-text">Ensalada con pollo y verduras en salsa de soya.</p>
-              <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Solicitar</a>
-            </div>
-          </div>
-        </div>
-
-          <div class="col">
-            <div class="card">
-              <img src="images/domicilios.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Domicilio</h5>
-                <p class="card-text">Domicilios en horarios de 8:00 am a 10:00pm.</p>
-                <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Solicitar</a>
-              </div>
-            </div>
-          </div>                            
-      </div>
-
+     
       <!-- contacto -->
       <section  id="contacto">
         <h2 class="tituloC">Contacto</h2>

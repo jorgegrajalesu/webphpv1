@@ -67,16 +67,15 @@ if(isset($_SESSION['idusuario'])==false){
                                 ?>
                             </tbody>
                         </table>
-
+                        < </div>
+                            <!-- /.card -->
                     </div>
-                    <!-- /.card -->
+                    <!-- /.col -->
                 </div>
-                <!-- /.col -->
+                <!-- /.row -->
             </div>
-            <!-- /.row -->
+            <!--/. container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
-    <!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
