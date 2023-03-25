@@ -1,7 +1,7 @@
 <?php
  if(isset($_REQUEST['guardar'])){
      require_once('conexion.php');
-     $conn =mysqli_connect($host, $user, $pwd, $db);
+     $conn =mysqli_connect($host, $user, $pw, $db);
      
      $nombre=mysqli_real_escape_string($conn,$_REQUEST['nombre'] ?? '');     
      $isbn=mysqli_real_escape_string($conn,$_REQUEST['isbn'] ?? '');
@@ -13,7 +13,7 @@
      $verRow=$verResult->num_rows;
 
      //para evitar injection sql 
-       if ($nombre !='' && $autor !='' && $isbn !='' &&  $precio !='' && $existencia !='' && $verRow==null) {     
+       if ($nombre !='' && $isbn !='' &&  $precio !='' && $verRow==null) {     
         $nom_archivo=$_FILES['file1']['name']; // Para conocer el nombre del archivo
         $ruta = "images/" . $nom_archivo;  // La ruta del archivo contiene el nuevo nombre y el tipo de extension
         $archivo = $_FILES['file1']['tmp_name']; //el arhivo a subir
