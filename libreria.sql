@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-03-2023 a las 04:19:36
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 25-03-2023 a las 21:18:14
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,7 +65,9 @@ CREATE TABLE `libros` (
 
 INSERT INTO `libros` (`idlibro`, `nombre`, `isbn`, `precio`, `imagen`, `descripcion`) VALUES
 (1, 'Crimen y castigo', '955568788', 95000, 'images/crimenycastigo.jpg', 'Autor: Fiódor Dostoievski\r\nEditorial: Edimat\r\nTamaño: 20 x 13 cm\r\nNº de páginas: 400\r\nEstado: Nuevo\r\nTapa DURA'),
-(2, 'babilonia', '498688878', 32000, 'images/babilonia.jpg', 'George Samuel Clason ');
+(2, 'babilonia', '498688878', 32000, 'images/babilonia.jpg', 'George Samuel Clason '),
+(3, 'sdfsdsf', '445456555', 20000, 'images/pexels-anouar-olh-1730560.jpg', 'fsdfsfsdsfd'),
+(4, 'sistemas', '9400123', 120000, 'images/pexels-anouar-olh-1730560.jpg', 'sistemas en la educaciÃ³n');
 
 -- --------------------------------------------------------
 
@@ -123,7 +125,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `idlibro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idlibro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

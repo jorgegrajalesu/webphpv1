@@ -78,9 +78,10 @@ if(isset($_REQUEST['idBorrar'])){
                                <tr>
                             <td><?php echo $row['nombre'] ?> </td>                  
                             <td><?php echo $row['isbn'] ?></td>
-                            <td><?php echo $row['precio'] ?></td>                 
+                            <td><?php echo $row['precio'] ?></td>
+                            <td><?php echo "<img src='".$row['imagen']."' width='50' >";"" ?></td>                 
                             <td><?php echo $row['descripcion'] ?></td>
-                            <td><?php echo "<img src='".$row['imagen']."' width='50' >";"" ?></td>
+                            
                             <td>
                                 <a href="panel.php?modulo=editarLibro&idlibro=<?php echo $row['idlibro']?>"style="margin-right:5px"><i class="fas fa-book-reader" title="Editar Libro"></i></a>
                                 <a href="panel.php?modulo=libros&idBorrar=<?php echo $row['idlibro']?>" style="margin-right:5px" class="fas fa-ban borrarLibro" title="Borrar Libro"></a>
