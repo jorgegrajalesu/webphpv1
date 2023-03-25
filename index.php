@@ -184,6 +184,7 @@
       <!-- footer -->
       <footer class="cover">
         &copy;2023. Todos los derechos reservados Restaurante Tapitas. Creado por:<a href="#" target="_blank">Jorge Grajales</a>
+        <a href="admin/index.php" target="_blank">webmaster</a>
       </footer>
 
 
