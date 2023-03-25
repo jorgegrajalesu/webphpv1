@@ -5,7 +5,27 @@ $conn = mysqli_connect($host,$user,$pw,$db);
 if(isset($_SESSION['idusuario'])==false){
   header("Location:index.php");
 }
-
+//borrar libro
+if(isset($_REQUEST['idBorrar'])){
+    $idlibro=mysqli_real_escape_string($conn,$_REQUEST['idBorrar']??'');
+    //instruccion para eliminar con lenguaje sql
+    $sql="DELETE FROM libros WHERE idlibro='".$idlibro."';";
+    $result=mysqli_query($conn,$sql);
+    if($result){
+      ?>
+      <div class="alert alert-success contents float-right" role="alert">
+        Libro Eliminado!!     
+       </div>
+       <?php
+    }else{
+      ?>
+       <div class="alert alert-warning float-right" role="alert">
+        Error en eliminar Libro!! <?php echo $mysqli_error($conn);?>    
+       </div>
+       <?php
+    }
+  }
+  ?>
 
 ?>
 <!-- Content Wrapper. Contains page content -->
