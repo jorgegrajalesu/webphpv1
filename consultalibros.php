@@ -55,10 +55,10 @@
                 <a class="nav-link" href="consultalibros.php">Libros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#servicios">Servicios</a>
+                <a class="nav-link" href="index.php#servicios">Servicios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contacto">Contacto</a>
+                <a class="nav-link" href="index.php#contacto">Contacto</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link btn btn-danger" href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" tabindex="-1" target="_blank">¡Haz tu pedido!</a>
