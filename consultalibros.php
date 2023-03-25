@@ -73,27 +73,31 @@
       
         <h2 class="titulo">Libros</h2>
         <div class="col">
-        <?php
-                include_once "admin/conexion.php";
-                // crear la conexion a la bd
-                $conn = mysqli_connect($host,$user,$pw,$db);
-                //crear una consulta a la base de datos
-                $sql = "SELECT * FROM libros;";
-                //preparar el array de resultados
-                $result =mysqli_query($conn,$sql);
-                //estructura de loop para imprimir n datos while
-                while ($row = mysqli_fetch_assoc($result)){
+          <?php
+                  include_once "admin/conexion.php";
+                  // crear la conexion a la bd
+                  $conn = mysqli_connect($host,$user,$pw,$db);
+                  //crear una consulta a la base de datos
+                  $sql = "SELECT * FROM libros;";
+                  //preparar el array de resultados
+                  $result =mysqli_query($conn,$sql);
+                  //estructura de loop para imprimir n datos while
+                  while ($row = mysqli_fetch_assoc($result)){
 
-                ?>
-          <div class="card">
-          <?php echo "<img src='admin/".$row['imagen']."' width='100%' height='380'>";""?>
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $row['nombre']?></h5>
-              <p class="card-text">ISBN-<?php echo $row['isbn']?><p>
-               <?php echo $row['descripcion']?>
-              </p><span> $<?php echo $row['precio']?></span></p>
-              <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
-            </div>            
+                  ?>
+              <div class="card">
+                <figure class="figure">
+                <?php echo "<img src='admin/".$row['imagen']."' class='figure-img rounded img'>";""?> 
+                  
+                </figure>
+          
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $row['nombre']?></h5>
+                  <p class="card-text">ISBN-<?php echo $row['isbn']?><p>
+                  <?php echo $row['descripcion']?>
+                  </p><span> $<?php echo $row['precio']?></span></p>
+                  <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
+                </div>            
           </div>          
         </div>
         <?php
