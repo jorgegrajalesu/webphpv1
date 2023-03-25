@@ -72,8 +72,7 @@
       <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="libros">
       
         <h2 class="titulo">Libros</h2>
-        <div class="col">
-          <?php
+              <?php
                   include_once "admin/conexion.php";
                   // crear la conexion a la bd
                   $conn = mysqli_connect($host,$user,$pw,$db);
@@ -84,13 +83,12 @@
                   //estructura de loop para imprimir n datos while
                   while ($row = mysqli_fetch_assoc($result)){
 
-                  ?>
-              <div class="card">
-                <figure class="figure">
-                <?php echo "<img src='admin/".$row['imagen']."' class='figure-img rounded img'>";""?> 
-                  
-                </figure>
-          
+                ?>
+            <div class="col">
+         
+              <div class="card">              
+                <?php echo "<img src='admin/".$row['imagen']."' class='img-responsive rounded img'>";""?>                 
+                      
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['nombre']?></h5>
                   <p class="card-text">ISBN-<?php echo $row['isbn']?><p>
@@ -98,8 +96,8 @@
                   </p><span> $<?php echo $row['precio']?></span></p>
                   <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
                 </div>            
-          </div>          
-        </div>
+             </div>          
+         </div>
         <?php
           }
         ?>

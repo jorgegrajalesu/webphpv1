@@ -111,6 +111,8 @@ footer{
     
 }
 
-img{
+ .img{
     width: 100%;
-}
+    height: 350px;
+    padding: 2px;
+} 
