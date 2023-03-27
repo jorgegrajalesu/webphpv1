@@ -37,6 +37,31 @@
               <li class="nav-item">
                 <a class="nav-link" href="#contacto">Contacto</a>
               </li>
+              <form class="d-flex" method="get">
+                <input class="form-control me-2" type="search" placeholder="escribe tu libro" aria-label="Search" name="busqueda">
+                <button class="btn btn-outline-primary" type="submit" name="enviar"><i class="far fa-search">Buscar</i></button>
+              </form>
+              <?php
+                  include_once "admin/conexion.php";
+                  // crear la conexion a la bd
+                  $conn = mysqli_connect($host,$user,$pw,$db);
+                  //crear una consulta a la base de datos
+                  $where="";
+
+                  if(isset($_GET['enviar'])){
+                    $busqueda = $_GET['busqueda'];
+                  
+                  
+                    if (isset($_GET['busqueda']))
+                    {
+                      $where="WHERE idlibro LIKE'%".$busqueda."%' OR nombre  LIKE'%".$busqueda."%' OR isbn  LIKE'%".$busqueda."%'
+                      OR precio  LIKE'%".$busqueda."%'";
+                    }
+                    
+                  }
+                  
+                  
+                  ?>
               <li class="nav-item">
                 <a class="nav-link btn btn-danger" href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" tabindex="-1" target="_blank">¡Haz tu pedido!</a>
               </li>
@@ -85,6 +110,56 @@
         </button>
       </div>
 
+      
+      <!-- buscar-->
+      <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="carta">
+        <h2 class="titulo">Libros</h2>
+        <?php
+                  include_once "admin/conexion.php";
+                  // crear la conexion a la bd
+                  $conn = mysqli_connect($host,$user,$pw,$db);
+                  //crear una consulta a la base de datos
+                          
+                  $sql = "SELECT * FROM libros $where";
+                  $dato = mysqli_query($conn, $sql);
+
+                  if($dato -> num_rows >0){
+                      while($row=mysqli_fetch_array($dato)){
+                      
+                  ?>
+                  
+                
+        <div class="col">
+          <div class="card">
+          <?php echo "<img src='admin/".$row['imagen']."' class='img-responsive rounded img'>";""?>                 
+                 
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $row['nombre']?></h5>
+              <p class="card-text">ISBN-<?php echo $row['isbn']?></p>
+              <?php echo $row['descripcion']?>
+                </p><span> $<?php echo $row['precio']?></span></p>
+              <a href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" class="btn btn-danger" target="_blank">Pedir</a>
+            </div>
+          </div>
+        </div>
+        <?php
+          }
+          }else{
+
+              ?>
+              <tr class="text-center">
+              <td colspan="16">No existen registros</td>
+              </tr>
+
+              
+              <?php
+              
+          }
+
+          ?>
+     
+      </div>
+      
       <!-- la carta -->
       <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="carta">
         <h2 class="titulo">Novedades</h2>
