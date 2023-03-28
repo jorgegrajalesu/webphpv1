@@ -11,8 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/logorestaurantetapitas.ico" type="image/x-icon">   
-    
-    
+    <script src="https://kit.fontawesome.com/952509c1de.js" crossorigin="anonymous"></script>   
 </head>
 <body>
     <!-- menú -->
@@ -39,7 +38,7 @@
               </li>
               <form class="d-flex" method="get">
                 <input class="form-control me-2" type="search" placeholder="escribe tu libro" aria-label="Search" name="busqueda">
-                <button class="btn btn-outline-primary" type="submit" name="enviar"><i class="far fa-search">Buscar</i></button>
+                <button class="btn btn-outline-primary" type="submit" name="enviar"><i class="fa fa-search"></i></button>
               </form>
               <?php
                   include_once "admin/conexion.php";
@@ -63,7 +62,7 @@
                   
                   ?>
               <li class="nav-item">
-                <a class="nav-link btn btn-danger" href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" tabindex="-1" target="_blank">¡Haz tu pedido!</a>
+                <a class="nav-link btn btn-danger" href="https://wa.me/3105188168?text=Solicita%20tu%20pedido!!" target="_blank">¡Haz tu pedido!</a>
               </li>
             </ul>
           </div>
